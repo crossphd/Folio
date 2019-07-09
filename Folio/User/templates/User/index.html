@@ -1,0 +1,16 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1>Welcome, {{user.username}}</h1>
+</div>
+
+<ul>
+    {% for p in portfolios %}
+    <li>Portfolio {{ p.id }}: {{ p.text }} </li>
+    {% endfor %}
+</ul>
+
+
+{% endblock %}
