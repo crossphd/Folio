@@ -45,16 +45,14 @@
     <Compile Include="Folio\settings.py" />
     <Compile Include="Folio\urls.py" />
     <Compile Include="Folio\wsgi.py" />
-    <Compile Include="User\admin.py" />
-    <Compile Include="User\apps.py" />
-    <Compile Include="User\migrations\__init__.py" />
-    <Compile Include="User\models.py" />
-    <Compile Include="User\tests.py" />
-    <Compile Include="User\urls.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="User\views.py" />
-    <Compile Include="User\__init__.py" />
+    <Compile Include="Owner\admin.py" />
+    <Compile Include="Owner\apps.py" />
+    <Compile Include="Owner\migrations\__init__.py" />
+    <Compile Include="Owner\models.py" />
+    <Compile Include="Owner\tests.py" />
+    <Compile Include="Owner\urls.py" />
+    <Compile Include="Owner\views.py" />
+    <Compile Include="Owner\__init__.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\" />
@@ -67,12 +65,13 @@
     <Folder Include="app\templates\" />
     <Folder Include="app\templates\app\" />
     <Folder Include="Folio\" />
-    <Folder Include="User\" />
-    <Folder Include="User\migrations\" />
-    <Folder Include="User\templates\" />
-    <Folder Include="User\templates\User\" />
+    <Folder Include="Owner\" />
+    <Folder Include="Owner\migrations\" />
+    <Folder Include="Owner\templates\" />
+    <Folder Include="Owner\templates\Owner\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Owner\templates\Owner\index.html" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />
@@ -103,7 +102,6 @@
     <Content Include="app\templates\app\layout.html" />
     <Content Include="app\templates\app\login.html" />
     <Content Include="app\templates\app\loginpartial.html" />
-    <Content Include="User\templates\User\index.html" />
   </ItemGroup>
   <ItemGroup>
     <None Include="readme.html">

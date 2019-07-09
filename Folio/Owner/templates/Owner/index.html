@@ -1,0 +1,20 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1>Welcome, {{user.username}}</h1>
+</div>
+
+<ul>
+    {% for p in portfolios %}
+    <li><h2>Portfolio {{ p.id }}: {{ p.text }}</h2></li>
+    {% for s in stocks %}
+    {% if p.id == s.portfolio.id %}
+    <li><p> Stock: {{ s.stock }} ${{s.stock.price}} -- Shares: {{s.shares}}</p></li>
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+</ul>
+
+{% endblock %}

@@ -8,7 +8,6 @@ import django.contrib.auth.views
 
 import app.forms
 import app.views
-import User.views
 
 # Uncomment the next lines to enable the admin:
 from django.conf.urls import include
@@ -45,5 +44,5 @@ urlpatterns = [
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
     
-    url(r'^user/', include('User.urls')),
+    url(r'^owner/', include('Owner.urls')),
 ]

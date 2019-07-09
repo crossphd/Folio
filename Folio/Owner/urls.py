@@ -1,7 +1,7 @@
 from django.conf.urls import url
-import User.views
+import Owner.views
 
 
 urlpatterns = [
-    url(r'$', User.views.home),
+    url(r'$', Owner.views.home),
 ]

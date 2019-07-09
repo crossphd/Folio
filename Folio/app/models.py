@@ -4,6 +4,15 @@ Definition of models.
 
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models import Q
+
+class PortfolioStockQuerySet(models.QuerySet):
+    def stocks_for_user(self, user):
+        return self.filter(portfolio__owner=user)
+
+class PortfolioQuerySet(models.QuerySet):
+    def portfolios_for_user(self, user):
+        return self.filter(owner=user)
 
 class Stock(models.Model):
     text = models.CharField(max_length=200)
@@ -21,6 +30,8 @@ class Portfolio(models.Model):
     owner = models.ForeignKey(User, related_name="portfolio_owner")
     pub_date = models.DateTimeField('date published')
 
+    objects = PortfolioQuerySet.as_manager()    
+
     def __str__(self):
         return "{0} - {1}".format(self.owner, self.text)
 
@@ -30,7 +41,9 @@ class PortfolioStock(models.Model):
     update_date = models.DateTimeField(auto_now=True)
     add_date = models.DateTimeField(auto_now_add=True)
     shares = models.IntegerField(default=0)
-    
+
+    objects = PortfolioStockQuerySet.as_manager()    
+
     def value(self):
         return shares * self.stock.price
         
